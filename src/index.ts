@@ -1,7 +1,8 @@
-import express, { Application, Request, Response } from "express";
 import cors from "cors";
-
+import express, { Application, Request, Response } from "express";
 import MarkdownPDF from "markdown-pdf";
+
+import * as template from "../templates/luftmobilitaet";
 
 const app: Application = express();
 const PORT = 3003;
@@ -13,6 +14,11 @@ app.use(cors({
     origin: "http://localhost:3000",
 }));
 
+app.get(
+    "/",
+    (req: Request, res: Response) => res.download(OUTPUTPATH)
+);
+
 app.post(
     "/",
     (req: Request, res: Response) => {
@@ -23,9 +29,18 @@ app.post(
     }
 );
 
-app.get(
-    "",
-    (req: Request, res: Response) => res.download(OUTPUTPATH)
+app.post(
+    "/replace/",
+    (req: Request, res: Response) => {
+        let md = template.default;
+        for(const varName in req.body.master_data) {
+            md = md.replace(`{${varName}}`, req.body.master_data[varName])
+        }
+        md = md.replace("{PROPOSAL_CONTENT}", req.body.content);
+        return MarkdownPDF({}).from.string(md).to(OUTPUTPATH, () => {
+            res.status(200).send();
+        });
+    }
 );
 
 try {
