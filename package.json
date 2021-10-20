@@ -16,7 +16,9 @@
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@types/cors": "^2.8.12",
     "@types/markdown-pdf": "^9.0.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "markdown-pdf": "^10.0.0"
   }
