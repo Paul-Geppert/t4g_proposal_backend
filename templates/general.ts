@@ -11,8 +11,34 @@ Fax | {{creator.faxNumber}}
 E-Mail | {{creator.mailAddress}}
 Internet | {{creator.webAddress}}
 
-Ausführende Stelle: {{executor}}
+## Weitere Projektpartner
 
 {PROPOSAL_PARTNERS}
+
+## Ausführende Stelle
+
+{{executor}}
+
+## Projektkoordination/-Leitung
+
+| | |
+----|---
+Name | {{leader.name}}
+Addresse | {{leader.street}} {{leader.houseNumber}}<br>{{leader.zipCode}} {{leader.city}}<br>{{leader.country}} |
+Telefon | {{leader.phoneNumber}}
+Fax | {{leader.faxNumber}}
+E-Mail | {{leader.mailAddress}}
+Internet | {{leader.webAddress}}
+
+## Ansprechpartner Projektleitung
+
+| | |
+----|---
+Name | {{communicationPartner.name}}
+Addresse | {{communicationPartner.street}} {{communicationPartner.houseNumber}}<br>{{communicationPartner.zipCode}} {{communicationPartner.city}}<br>{{communicationPartner.country}} |
+Telefon | {{communicationPartner.phoneNumber}}
+Fax | {{communicationPartner.faxNumber}}
+E-Mail | {{communicationPartner.mailAddress}}
+Internet | {{communicationPartner.webAddress}}
 
 {PROPOSAL_CONTENT}`;

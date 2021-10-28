@@ -2,7 +2,11 @@ import cors from "cors";
 import express, { Application, Request, Response } from "express";
 import MarkdownPDF from "markdown-pdf";
 
-import * as template from "../templates/luftmobilitaet";
+import * as template from "../templates/general";
+import { fillTemplate } from "./controllers/templateController";
+
+const prettyMdPdf = require("pretty-markdown-pdf");
+const fs = require('fs');
 
 const app: Application = express();
 const PORT = 3003;
@@ -17,6 +21,28 @@ app.use(cors({
 app.get(
     "/",
     (req: Request, res: Response) => res.download(OUTPUTPATH)
+);
+
+app.post(
+    "/nice/",
+    (req: Request, res: Response) => {
+        return fillTemplate(template.default, req.body)
+            .then((template) => {
+                fs.writeFile("./tmp/create.md", template, () => {
+                    prettyMdPdf.convertMd({ markdownFilePath: "./tmp/create.md", outputFilePath: "./tmp/create.pdf" })
+                    res.send();
+                })
+            });
+        // return fillTemplate(template.default, req.body)
+        //     .then((template) => {
+        //         MarkdownPDF({
+        //             cssPath: "../assets/github-markdown.css"
+        //         }).from.string(template).to(OUTPUTPATH, () => {
+        //             console.log("Finished creation of PDF");
+        //             res.status(200).send();
+        //         });
+        //     });
+    }
 );
 
 app.post(
