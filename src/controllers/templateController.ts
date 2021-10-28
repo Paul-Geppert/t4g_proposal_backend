@@ -32,12 +32,15 @@ const fillPartners = (template: string, partners: Array<any>) => {
     return template.replace("{PROPOSAL_PARTNERS}", filledPartners);
 }
 
-const fillMarkdownContent = (template: string, content: Array<Array<string>>) => {
+const fillMarkdownContent = (template: string, content: Array<Array<any>>) => {
     let markdownContent = "";
     for (const contentInStep of content) {
         if (contentInStep.length > 0) {
-            for (const contentInAnswer of contentInStep) {
-                markdownContent = markdownContent.concat(contentInAnswer);
+            for (const question of contentInStep) {
+                markdownContent = markdownContent.concat(`# ${question.title}\n`);
+                let sanitizedAnswer = question.answer;
+                sanitizedAnswer = sanitizedAnswer.replace(/^#\ /mg,"## ")
+                markdownContent = markdownContent.concat(sanitizedAnswer);
                 markdownContent = markdownContent.concat('\n');
             }
         }
