@@ -54,3 +54,8 @@ export const fillTemplate = async (template: string, data: any) => {
     template = fillMarkdownContent(template, data.content);
     return template;
 }
+
+export const fillXMLTemplate = async (template: string, data: any) => {
+    template = fillFrontendVariables(template, data);
+    return template;
+}
