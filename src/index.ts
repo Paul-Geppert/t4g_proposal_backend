@@ -24,6 +24,7 @@ app.post(
     (req: Request, res: Response) => {
         const md = req.body.content;
         return MarkdownPDF({}).from.string(md).to(OUTPUTPATH, () => {
+            console.log("Finished creation of PDF");
             res.status(200).send();
         });
     }
@@ -41,6 +42,11 @@ app.post(
             res.status(200).send();
         });
     }
+);
+
+app.get(
+    "/xml/",
+    (req: Request, res: Response) => res.download(OUTPUTPATH)
 );
 
 try {
