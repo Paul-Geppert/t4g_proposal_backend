@@ -27,7 +27,7 @@ app.get(
 );
 
 app.post(
-    "/nice/",
+    "/",
     (req: Request, res: Response) => {
         return fillXMLTemplate(xmlTemplate.default, req.body)
             .then((templ) => { return fs.writeFile(OUTPUTPATH_XML, templ); })
@@ -47,31 +47,6 @@ app.post(
         //             res.status(200).send();
         //         });
         //     });
-    }
-);
-
-app.post(
-    "/",
-    (req: Request, res: Response) => {
-        const md = req.body.content;
-        return MarkdownPDF({}).from.string(md).to(OUTPUTPATH_PDF, () => {
-            console.log("Finished creation of PDF");
-            res.status(200).send();
-        });
-    }
-);
-
-app.post(
-    "/replace/",
-    (req: Request, res: Response) => {
-        let md = template.default;
-        for (const varName in req.body.master_data) {
-            md = md.replace(`{${varName}}`, req.body.master_data[varName])
-        }
-        md = md.replace("{PROPOSAL_CONTENT}", req.body.content);
-        return MarkdownPDF({}).from.string(md).to(OUTPUTPATH_PDF, () => {
-            res.status(200).send();
-        });
     }
 );
 
