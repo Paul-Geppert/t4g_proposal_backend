@@ -1,3 +1,5 @@
+const PROJECT_TITLE = "Luftmobilität";
+
 const partnersTemplate =
 `
 Name | Anschrift | Kontakt
@@ -32,6 +34,10 @@ const fillPartners = (template: string, partners: Array<any>) => {
     return template.replace("{PROPOSAL_PARTNERS}", filledPartners);
 }
 
+const fillTitle = (template: string, title: string) => {
+    return template.replace("{PROJECT_NAME}", title);
+}
+
 const fillMarkdownContent = (template: string, content: Array<Array<any>>) => {
     let markdownContent = "";
     for (const contentInStep of content) {
@@ -51,6 +57,7 @@ const fillMarkdownContent = (template: string, content: Array<Array<any>>) => {
 export const fillTemplate = async (template: string, data: any) => {
     template = fillFrontendVariables(template, data);
     template = fillPartners(template, data.partners);
+    template = fillTitle(template, PROJECT_TITLE);
     template = fillMarkdownContent(template, data.content);
     return template;
 }
