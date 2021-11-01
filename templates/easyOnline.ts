@@ -43,9 +43,9 @@ export default
     <xf:Feldgruppe_Vorhabenbeschreibung>
       <xf:Maske_Vorhabenbeschreibung>
         <xf:Einzelposition>
-          <xf:Akronym>NICE_69</xf:Akronym>
-          <xf:Thema>Das ist eine geile Vorhabensbeschreibung. Aber kurz</xf:Thema>
-          <xf:Beschreibung1>Lololololololololololololololololololololololololololololololo</xf:Beschreibung1>
+          <xf:Akronym>ABC_123</xf:Akronym>
+          <xf:Thema>Entwicklung eines Flugtaxis auf Basis eines Wasserstoffantriebs.</xf:Thema>
+          <xf:Beschreibung1>In unserem Projekt möchten wir ein Flugtaxi mit Wasserstoffantrieb entwickeln.</xf:Beschreibung1>
           <xf:Schreibschutz>Standard</xf:Schreibschutz>
         </xf:Einzelposition>
       </xf:Maske_Vorhabenbeschreibung>
