@@ -90,8 +90,8 @@ export default
       <xf:Maske_Ansprechpartner_PL>
         <xf:Einzelposition>
           <xf:Geschlecht_PL>Frau</xf:Geschlecht_PL>
-          <xf:Vorname_PL>Maria</xf:Vorname_PL>
-          <xf:Name_PL>Mustermann</xf:Name_PL>
+          <xf:Vorname_PL>{{communicationPartner.firstName}}</xf:Vorname_PL>
+          <xf:Name_PL>{{communicationPartner.lastName}}</xf:Name_PL>
           <xf:Telefon_PL>{{communicationPartner.phoneNumber}}</xf:Telefon_PL>
           <xf:Email_PL>{{communicationPartner.mailAddress}}</xf:Email_PL>
           <xf:Schreibschutz>Standard</xf:Schreibschutz>
@@ -143,7 +143,7 @@ export default
           <xf:Land_AU>{{creator.country}}</xf:Land_AU>
           <xf:Anschrift_AU>{{creator.street}} {{creator.houseNumber}}, {{creator.zipCode}} {{creator.city}}</xf:Anschrift_AU>
           <xf:OrganisationstypKurz>Kleine und mittlere Unternehmen (KMU)</xf:OrganisationstypKurz>
-          <xf:Name_Person_AU>Maria Mustermann</xf:Name_Person_AU>
+          <xf:Name_Person_AU>{{communicationPartner.name}}</xf:Name_Person_AU>
           <xf:Telefon_Person_AU>{{communicationPartner.phoneNumber}}</xf:Telefon_Person_AU>
           <xf:Email_Person_AU>{{communicationPartner.mailAddress}}</xf:Email_Person_AU>
           <xf:BetragSumme>1000</xf:BetragSumme>
@@ -158,7 +158,7 @@ export default
           <xf:Land_AU>{{creator.country}}</xf:Land_AU>
           <xf:Anschrift_AU>{{creator.street}} {{creator.houseNumber}}, {{creator.zipCode}} {{creator.city}}</xf:Anschrift_AU>
           <xf:OrganisationstypKurz>Kleine und mittlere Unternehmen (KMU)</xf:OrganisationstypKurz>
-          <xf:Name_Person_AU>Maria Mustermann</xf:Name_Person_AU>
+          <xf:Name_Person_AU>{{communicationPartner.name}}</xf:Name_Person_AU>
           <xf:Telefon_Person_AU>{{communicationPartner.phoneNumber}}</xf:Telefon_Person_AU>
           <xf:Email_Person_AU>{{communicationPartner.mailAddress}}</xf:Email_Person_AU>
           <xf:BetragSumme>1000</xf:BetragSumme>
@@ -173,7 +173,7 @@ export default
           <xf:Land_AU>{{creator.country}}</xf:Land_AU>
           <xf:Anschrift_AU>{{creator.street}} {{creator.houseNumber}}, {{creator.zipCode}} {{creator.city}}</xf:Anschrift_AU>
           <xf:OrganisationstypKurz>Kleine und mittlere Unternehmen (KMU)</xf:OrganisationstypKurz>
-          <xf:Name_Person_AU>Maria Mustermann</xf:Name_Person_AU>
+          <xf:Name_Person_AU>{{communicationPartner.name}}</xf:Name_Person_AU>
           <xf:Telefon_Person_AU>{{communicationPartner.phoneNumber}}</xf:Telefon_Person_AU>
           <xf:Email_Person_AU>{{communicationPartner.mailAddress}}</xf:Email_Person_AU>
           <xf:BetragSumme>1000</xf:BetragSumme>
@@ -188,7 +188,7 @@ export default
           <xf:Land_AU>{{creator.country}}</xf:Land_AU>
           <xf:Anschrift_AU>{{creator.street}} {{creator.houseNumber}}, {{creator.zipCode}} {{creator.city}}</xf:Anschrift_AU>
           <xf:OrganisationstypKurz>Kleine und mittlere Unternehmen (KMU)</xf:OrganisationstypKurz>
-          <xf:Name_Person_AU>Maria Mustermann</xf:Name_Person_AU>
+          <xf:Name_Person_AU>{{communicationPartner.name}}</xf:Name_Person_AU>
           <xf:Telefon_Person_AU>{{communicationPartner.phoneNumber}}</xf:Telefon_Person_AU>
           <xf:Email_Person_AU>{{communicationPartner.mailAddress}}</xf:Email_Person_AU>
           <xf:BetragSumme>1000</xf:BetragSumme>
@@ -203,7 +203,7 @@ export default
           <xf:Land_AU>{{creator.country}}</xf:Land_AU>
           <xf:Anschrift_AU>{{creator.street}} {{creator.houseNumber}}, {{creator.zipCode}} {{creator.city}}</xf:Anschrift_AU>
           <xf:OrganisationstypKurz>Kleine und mittlere Unternehmen (KMU)</xf:OrganisationstypKurz>
-          <xf:Name_Person_AU>Maria Mustermann</xf:Name_Person_AU>
+          <xf:Name_Person_AU>{{communicationPartner.name}}</xf:Name_Person_AU>
           <xf:Telefon_Person_AU>{{communicationPartner.phoneNumber}}</xf:Telefon_Person_AU>
           <xf:Email_Person_AU>{{communicationPartner.mailAddress}}</xf:Email_Person_AU>
           <xf:BetragSumme>4000</xf:BetragSumme>

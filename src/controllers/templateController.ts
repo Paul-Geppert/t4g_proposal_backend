@@ -62,6 +62,11 @@ export const fillTemplate = async (template: string, data: any) => {
 }
 
 export const fillXMLTemplate = async (template: string, data: any) => {
+    const commName = data.communicationPartner.name;
+    const nameSplit = commName.lastIndexOf(" ");
+    data.communicationPartner.firstName = commName.substring(0, nameSplit);
+    data.communicationPartner.lastName = commName.substring(nameSplit + 1);
+
     template = fillFrontendVariables(template, data);
     return template;
 }
