@@ -1,3 +1,5 @@
+import { get } from "lodash";
+
 const PROJECT_TITLE = "Luftmobilität";
 
 const partnersTemplate =
@@ -8,7 +10,7 @@ Name | Anschrift | Kontakt
 
 const fillFrontendVariables = (template: string, data: any) => {
     // Regex to match all variables in template, that should be replace by values from frontend data
-    const matchFrontentTemplateVars = /\{\{[\w\.]+\}\}/g;
+    const matchFrontentTemplateVars = /\{\{[\w\.\[\]]+\}\}/g;
     return template.replace(matchFrontentTemplateVars, (m, p) => { return getValue(m, data); });
 }
 
@@ -16,10 +18,7 @@ var getValue = (path: any, obj: any, ) => {
     // Strip leading '{{' and last '}}'
     path = path.substr(2, path.length - 4);
     // Get value of obj at path
-    for (var i = 0, path = path.split('.'), len = path.length; i < len; i++) {
-        obj = obj[path[i]];
-    };
-    return obj || "";
+    return get(obj, path) || "";
 };
 
 const fillPartners = (template: string, partners: Array<any>) => {

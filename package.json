@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "@types/cors": "^2.8.12",
+    "@types/lodash": "^4.14.176",
     "@types/markdown-pdf": "^9.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "lodash": "^4.17.21",
     "markdown-pdf": "^10.0.0",
     "pretty-markdown-pdf": "^1.5.1"
   }
