@@ -29,7 +29,7 @@ export default
           <xf:Formulartyp>SKI</xf:Formulartyp>
           <xf:KennungAntragsverfahren>N</xf:KennungAntragsverfahren>
           <xf:KennungAntragsverfahrenLang>Projektskizze</xf:KennungAntragsverfahrenLang>
-          <xf:von>2021-11-01</xf:von>
+          <xf:von>2021-12-01</xf:von>
           <xf:bis>2024-01-31</xf:bis>
           <xf:von_Jahr>2021</xf:von_Jahr>
           <xf:bis_Jahr>2024</xf:bis_Jahr>
@@ -214,7 +214,7 @@ export default
         <xf:Einzelposition>
           <xf:Foerderquote>50</xf:Foerderquote>
           <xf:Berechnungsbasis>Z</xf:Berechnungsbasis>
-          <xf:rpf_Begruendung>Unser Projekt ist so bahnbrechend, dass wir die Welt verändern werden. Unter anderem lösen wir die Klimakrise und den Hunger.</xf:rpf_Begruendung>
+          <xf:rpf_Begruendung>Das zu entwickelnde Flugtaxi löst diverse aktuelle Verkehrsprobleme und stellt gleichzeitig einen bedeutenden Beitrag für die Klimawende da. Für Forschung in diesem zukunftsträchtigen Bereich benötigen wir Geld.</xf:rpf_Begruendung>
         </xf:Einzelposition>
         <xf:Zwischensumme xf:Jahr="2021">
           <xf:BetragSumme>1000</xf:BetragSumme>
