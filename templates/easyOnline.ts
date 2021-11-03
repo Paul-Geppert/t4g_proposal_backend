@@ -45,7 +45,7 @@ export default
         <xf:Einzelposition>
           <xf:Akronym>ABC_123</xf:Akronym>
           <xf:Thema>Entwicklung eines Flugtaxis auf Basis eines Wasserstoffantriebs.</xf:Thema>
-          <xf:Beschreibung1>{{content[1][0].answer}}</xf:Beschreibung1>
+          <xf:Beschreibung1>{{freeText[1][0].answer}}</xf:Beschreibung1>
           <xf:Schreibschutz>Standard</xf:Schreibschutz>
         </xf:Einzelposition>
       </xf:Maske_Vorhabenbeschreibung>

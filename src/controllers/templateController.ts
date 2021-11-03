@@ -57,7 +57,7 @@ export const fillTemplate = async (template: string, data: any) => {
     template = fillFrontendVariables(template, data);
     template = fillPartners(template, data.partners);
     template = fillTitle(template, PROJECT_TITLE);
-    template = fillMarkdownContent(template, data.content);
+    template = fillMarkdownContent(template, data.freeText);
     return template;
 }
 
