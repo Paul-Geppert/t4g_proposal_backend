@@ -13,9 +13,10 @@ const fs = require('fs').promises;
 let MARKDOWN_CONVERTER_TO_USE = "PrettyMarkdownPdf";
 
 const PORT = 3003;
-const OUTPUTPATH_MD = "./tmp/doc.md";
-const OUTPUTPATH_PDF = "./tmp/doc.pdf";
-const OUTPUTPATH_XML = "./tmp/easyOnline.xml";
+const OUTPUTFOLDER = "./tmp"
+const OUTPUTPATH_MD = `${OUTPUTFOLDER}/doc.md`;
+const OUTPUTPATH_PDF = `${OUTPUTFOLDER}/doc.pdf`;
+const OUTPUTPATH_XML = `${OUTPUTFOLDER}/easyOnline.xml`;
 
 const app: Application = express();
 
@@ -70,9 +71,12 @@ app.get(
 );
 
 try {
-    app.listen(PORT, (): void => {
-        console.log(`Connected successfully on port ${PORT}`);
-    });
+    fs.mkdir(OUTPUTFOLDER, { recursive: true })
+        .then(() => {
+            app.listen(PORT, (): void => {
+                console.log(`Connected successfully on port ${PORT}`);
+            });
+        })
 } catch (error) {
     console.error(`Error occured: ${error}`);
 }
